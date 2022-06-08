@@ -20,14 +20,8 @@ fun main() {
 //    }
 
     when {
-        saldo > 0.0 -> {
-            println("Conta está positiva!")
-        }
-        saldo == 0.0 -> {
-            println("Conta está zerada!")
-        }
-        else -> {
-            println("Conta está negativa!")
-        }
+        saldo > 0.0 -> println("Conta está positiva!")
+        saldo == 0.0 -> println("Conta está zerada!")
+        else -> println("Conta está negativa!")
     }
 }
