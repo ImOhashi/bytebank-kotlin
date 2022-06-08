@@ -7,21 +7,27 @@ fun main() {
 
     saldo = 100.0
 
-    println("\nTitular: $titular\n" +
-        "Numero da conta: $numeroConta\n" +
-            "Saldo da conta: $saldo")
+    println(
+        "\nTitular: $titular\n" +
+                "Numero da conta: $numeroConta\n" +
+                "Saldo da conta: $saldo"
+    )
 
-//    if (saldo > 0.0) {
-//        println("Conta é positiva!")
-//    } else if(saldo == 0.0) {
-//        println("Conta está zerada!")
-//    } else {
-//        println("Conta está negativa!")
-//    }
+    testCondition(saldo)
 
     when {
         saldo > 0.0 -> println("Conta está positiva!")
         saldo == 0.0 -> println("Conta está zerada!")
         else -> println("Conta está negativa!")
+    }
+}
+
+fun testCondition(saldo: Double) {
+    if (saldo > 0.0) {
+        println("Conta é positiva!")
+    } else if (saldo == 0.0) {
+        println("Conta está zerada!")
+    } else {
+        println("Conta está negativa!")
     }
 }
