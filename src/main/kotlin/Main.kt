@@ -22,6 +22,11 @@ fun main() {
     println("Depositando na conta do Alex")
     accountAlex.deposit(50.0)
     println(accountAlex.balance)
+
+    accountAlex.withdrawMoney(15.0)
+    println(accountAlex.balance)
+
+    accountAlex.withdrawMoney(500.0)
 }
 
 class Account {
@@ -31,6 +36,14 @@ class Account {
 
     fun deposit(value: Double) {
         this.balance += value
+    }
+
+    fun withdrawMoney(value: Double) {
+        if (this.balance >= value) {
+            this.balance -= value
+        } else {
+            println("Valor acima do permitido!")
+        }
     }
 }
 
