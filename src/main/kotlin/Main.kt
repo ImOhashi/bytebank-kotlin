@@ -1,5 +1,20 @@
 fun main() {
     println("Bem vindo ao Bytebank")
+
+    val account = Account()
+    account.holder = "Leo"
+    account.number = 1001
+    account.balance = 200.0
+
+    println(account.holder)
+    println(account.number)
+    println(account.balance)
+}
+
+class Account {
+    var holder = ""
+    var number = 0
+    var balance = 0.0
 }
 
 fun testRepetition() {
