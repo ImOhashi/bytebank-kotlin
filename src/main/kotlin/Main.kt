@@ -1,6 +1,8 @@
 fun main() {
     println("Bem vindo ao Bytebank")
+}
 
+fun testRepetition() {
     var i = 0
 
     while (i < 5) {
