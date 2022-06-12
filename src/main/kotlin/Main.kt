@@ -20,18 +20,18 @@ fun main() {
     println(accountAlex.balance)
 
     println("Depositando na conta do Alex")
-    deposit(accountAlex, 50.0)
+    accountAlex.deposit(50.0)
     println(accountAlex.balance)
-}
-
-fun deposit(account: Account, value: Double) {
-    account.balance += value
 }
 
 class Account {
     var holder = ""
     var number = 0
     var balance = 0.0
+
+    fun deposit(value: Double) {
+        this.balance += value
+    }
 }
 
 fun testRepetition() {
