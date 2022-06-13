@@ -30,7 +30,10 @@ fun main() {
     println(accountAlex.balance)
 }
 
-class Account(val holder: String, val number: Int) {
+class Account(
+    val holder: String,
+    val number: Int
+) {
     var balance = 0.0
         private set
 
