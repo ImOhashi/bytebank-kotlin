@@ -67,7 +67,9 @@ class Account {
     }
 
     fun setBalance(value: Double) {
-        this.balance = value
+        if (value >= 0) {
+            this.balance = value
+        }
     }
 }
 
