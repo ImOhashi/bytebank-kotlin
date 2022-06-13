@@ -4,40 +4,40 @@ fun main() {
     val accountLeo = Account()
     accountLeo.holder = "Leo"
     accountLeo.number = 1001
-    accountLeo.balance = 200.0
+    accountLeo.setBalance(200.0)
 
     val accountAlex = Account()
     accountAlex.holder = "Alex"
     accountAlex.number = 1002
-    accountAlex.balance = 200.0
+    accountAlex.setBalance(200.0)
 
     println(accountLeo.holder)
     println(accountLeo.number)
-    println(accountLeo.balance)
+    println(accountLeo.getBalance())
 
     println(accountAlex.holder)
     println(accountAlex.number)
-    println(accountAlex.balance)
+    println(accountAlex.getBalance())
 
     println("Depositando na conta do Alex")
     accountAlex.deposit(50.0)
-    println(accountAlex.balance)
+    println(accountAlex.getBalance())
 
     accountAlex.withdrawMoney(15.0)
-    println(accountAlex.balance)
+    println(accountAlex.getBalance())
 
     accountLeo.transfer(100.0, accountAlex)
 
     accountAlex.withdrawMoney(500.0)
 
-    println(accountLeo.balance)
-    println(accountAlex.balance)
+    println(accountLeo.getBalance())
+    println(accountAlex.getBalance())
 }
 
 class Account {
     var holder = ""
     var number = 0
-    var balance = 0.0
+    private var balance = 0.0
 
     fun deposit(value: Double) {
         this.balance += value
@@ -60,6 +60,14 @@ class Account {
         }
 
         return false
+    }
+
+    fun getBalance(): Double {
+        return this.balance
+    }
+
+    fun setBalance(value: Double) {
+        this.balance = value
     }
 }
 
