@@ -1,43 +1,45 @@
 fun main() {
     println("Bem vindo ao Bytebank")
 
-    val accountLeo = Account()
-    accountLeo.holder = "Leo"
-    accountLeo.number = 1001
-    accountLeo.setBalance(200.0)
+    val accountLeo = Account("Leo", 1001)
+    accountLeo.deposit(200.0)
 
-    val accountAlex = Account()
-    accountAlex.holder = "Alex"
-    accountAlex.number = 1002
-    accountAlex.setBalance(200.0)
+    val accountAlex = Account("Alex", 1002)
+    accountAlex.deposit(200.0)
 
     println(accountLeo.holder)
     println(accountLeo.number)
-    println(accountLeo.getBalance())
+    println(accountLeo.balance)
 
     println(accountAlex.holder)
     println(accountAlex.number)
-    println(accountAlex.getBalance())
+    println(accountAlex.balance)
 
     println("Depositando na conta do Alex")
     accountAlex.deposit(50.0)
-    println(accountAlex.getBalance())
+    println(accountAlex.balance)
 
     accountAlex.withdrawMoney(15.0)
-    println(accountAlex.getBalance())
+    println(accountAlex.balance)
 
     accountLeo.transfer(100.0, accountAlex)
 
     accountAlex.withdrawMoney(500.0)
 
-    println(accountLeo.getBalance())
-    println(accountAlex.getBalance())
+    println(accountLeo.balance)
+    println(accountAlex.balance)
 }
 
 class Account {
     var holder = ""
     var number = 0
-    private var balance = 0.0
+    var balance = 0.0
+        private set
+
+    constructor(holder: String, number: Int) {
+        this.holder = holder
+        this.number = number
+    }
 
     fun deposit(value: Double) {
         this.balance += value
@@ -62,15 +64,15 @@ class Account {
         return false
     }
 
-    fun getBalance(): Double {
-        return this.balance
-    }
-
-    fun setBalance(value: Double) {
-        if (value >= 0) {
-            this.balance = value
-        }
-    }
+//    fun getBalance(): Double {
+//        return this.balance
+//    }
+//
+//    fun setBalance(value: Double) {
+//        if (value >= 0) {
+//            this.balance = value
+//        }
+//    }
 }
 
 fun testRepetition() {
