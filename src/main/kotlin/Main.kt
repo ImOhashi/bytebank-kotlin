@@ -26,7 +26,12 @@ fun main() {
     accountAlex.withdrawMoney(15.0)
     println(accountAlex.balance)
 
+    accountLeo.transfer(100.0, accountAlex)
+
     accountAlex.withdrawMoney(500.0)
+
+    println(accountLeo.balance)
+    println(accountAlex.balance)
 }
 
 class Account {
@@ -44,6 +49,17 @@ class Account {
         } else {
             println("Valor acima do permitido!")
         }
+    }
+
+    fun transfer(value: Double, destiny: Account): Boolean {
+        if (this.balance >= value) {
+            this.balance -= value
+            destiny.balance += value
+
+            return true
+        }
+
+        return false
     }
 }
 
