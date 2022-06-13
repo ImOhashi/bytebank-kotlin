@@ -30,16 +30,14 @@ fun main() {
     println(accountAlex.balance)
 }
 
-class Account {
-    var holder = ""
-    var number = 0
+class Account(val holder: String, val number: Int) {
     var balance = 0.0
         private set
 
-    constructor(holder: String, number: Int) {
-        this.holder = holder
-        this.number = number
-    }
+//    constructor(holder: String, number: Int) {
+//        this.holder = holder
+//        this.number = number
+//    }
 
     fun deposit(value: Double) {
         this.balance += value
