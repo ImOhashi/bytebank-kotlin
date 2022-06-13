@@ -1,10 +1,10 @@
 fun main() {
     println("Bem vindo ao Bytebank")
 
-    val accountLeo = Account("Leo", 1001)
+    val accountLeo = Account(holder = "Leo", number = 1001)
     accountLeo.deposit(200.0)
 
-    val accountAlex = Account("Alex", 1002)
+    val accountAlex = Account(number = 1002, holder = "Alex")
     accountAlex.deposit(200.0)
 
     println(accountLeo.holder)
